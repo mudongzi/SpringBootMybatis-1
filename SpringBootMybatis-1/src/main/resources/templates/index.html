@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>首页</title>
+</head>
+<body>
+	<h1>歡迎</h1>
+	<p th:text="${session.user}"></p>
+	<p th:text="${user}"></p>
+	<a href="#" th:href="@{/user/itemsPage1(currentPage=1)}"> 显示所有人员</a>
+</body>
+</html>

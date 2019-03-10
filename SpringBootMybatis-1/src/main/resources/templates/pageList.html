@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<table>
+		<tr th:each="user : ${userList.list}">
+	    <td>姓名:</td>  <td th:text="${user.userName}"></td> 
+	      <td>密码:</td> <td th:text="${user.userPwd}"></td>
+	     <!--  <td ><a href="#" th:href="@{/user/user(userName=${user.userName})}">修改</a></td>  -->
+ 		<td ><a href="#" th:href="@{/user/user/}+${user.userName}">修改</a></td>
+ 		
+		</tr>
+		<tr>
+		 <td ><a href="#" th:href="@{/user/itemsPage1(currentPage=${userList.firstPage})}">首页</a></td>
+		 <td ><a href="#" th:href="@{/user/itemsPage1(currentPage=${userList.prePage})}">上一頁</a></td>
+		 <td >当前第</td> <td th:text="${userList.pageNum}"></td><td >页</td>
+		 <td ><a href="#" th:href="@{/user/itemsPage1(currentPage=${userList.nextPage})}">下一頁</a></td>
+		 <td ><a href="#" th:href="@{/user/itemsPage1(currentPage=${userList.lastPage})}">最后一頁</a></td>
+		<td >总页码数</td> <td th:text="${userList.pages}"></td>
+		
+		</tr>
+		
+	</table>
+</body>
+</html>
